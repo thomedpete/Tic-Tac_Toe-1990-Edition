@@ -1,0 +1,37 @@
+body{
+display: flex;
+margin:0px;
+align-items: stretch;
+}
+.left-column{
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content:flex-start;
+background-color: blue;
+height: 900px;
+width:400px;
+}
+
+.game-board {
+  width: 660px;
+
+}
+.right-column{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+  background-color: green;
+  height: 900px;
+  width:420px;
+}
+
+.player-1-token {
+  height:50px;
+  width:50px;
+}
+.player-2-token{
+  height:50px;
+  width:55px;
+}
