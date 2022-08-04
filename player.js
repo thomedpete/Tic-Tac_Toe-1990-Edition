@@ -1,13 +1,7 @@
 class Player {
- constructor() {
+ constructor(id) {
    this.id = 'one'
-   this.token = 
    this.wins = 0
+
 }
-increaseWins() {
- this.wins ++
-}
-
-
-
 }
