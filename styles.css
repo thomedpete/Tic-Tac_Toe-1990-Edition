@@ -1,7 +1,11 @@
 body{
 display: flex;
 margin:0px;
+padding:0px;
 align-items: stretch;
+}
+* {
+  box-sizing: border-box;
 }
 .left-column{
 display:flex;
@@ -14,9 +18,63 @@ width:400px;
 }
 
 .game-board {
-  width: 660px;
+  display:flex;
+  flex-wrap:wrap;
+  background-color:;
+  align-items: center;
+  margin-top: 150px;
+  justify-content: center;
+  height:450px;
+  width: 550px;
+}
+
+.game-box {
+  margin:0px;
+  padding:0;
+  width: 150px;
+  height: 150px;
+  /* border: 3px solid black; */
+}
+#pos-zero {
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+#pos-one {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+#pos-two {
+  border-bottom: 3px solid black;
+}
+
+#pos-three {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+#pos-four {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+#pos-five {
+border-bottom: 3px solid black;
+}
+
+#pos-six {
+border-right: 3px solid black;
 
 }
+#pos-seven {
+border-right: 3px solid black;
+}
+#pos-eight {
+
+}
+
+
 .right-column{
   display:flex;
   flex-direction: column;
@@ -24,7 +82,7 @@ width:400px;
   justify-content:flex-start;
   background-color: green;
   height: 900px;
-  width:420px;
+  width:400px;
 }
 
 .player-1-token {
