@@ -1,5 +1,5 @@
 //Game Data
-var gameBoxes = Array.from(document.querySelectorAll('.game-box'))
+// var gameBoxes = Array.from(document.querySelectorAll('.game-box'))
 
 var gameBoard = ['','','','','','','','','']
 var currentPlayer = player1
