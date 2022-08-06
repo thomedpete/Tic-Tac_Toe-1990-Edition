@@ -37,42 +37,42 @@ width:400px;
   height: 150px;
   /* border: 3px solid black; */
 }
-#pos-zero {
+#b0 {
   border-right: 3px solid black;
   border-bottom: 3px solid black;
 }
 
-#pos-one {
+#b1 {
   border-bottom: 3px solid black;
   border-right: 3px solid black;
 }
 
-#pos-two {
+#b2 {
   border-bottom: 3px solid black;
 }
 
-#pos-three {
-  border-bottom: 3px solid black;
-  border-right: 3px solid black;
-}
-
-#pos-four {
+#b3 {
   border-bottom: 3px solid black;
   border-right: 3px solid black;
 }
 
-#pos-five {
+#b4 {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+#b5 {
 border-bottom: 3px solid black;
 }
 
-#pos-six {
+#b6 {
 border-right: 3px solid black;
 
 }
-#pos-seven {
+#b7{
 border-right: 3px solid black;
 }
-#pos-eight {
+#b8 {
 
 }
 

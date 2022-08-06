@@ -1,10 +1,11 @@
 //Game Data
-// var gameBoxes = Array.from(document.querySelectorAll('.game-box'))
 
-var gameBoard = ['','','','','','','','','']
+var gameBoard = [0,1,2,3,4,5,6,7,8]
 var currentPlayer = player1
 var player1 = new Player('one')
 var player2 = new Player('two')
+
+
 
 var winCons  = [
   [0,1,2],
@@ -16,6 +17,8 @@ var winCons  = [
   [0,4,8],
   [2,4,6]
 ]
+
+
 
 function gameStart() {
 
