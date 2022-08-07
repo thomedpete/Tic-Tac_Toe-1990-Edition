@@ -27,8 +27,14 @@ width:400px;
   background-color: grey;
 }
  h1 {
-  margin-left: 179px;
-  margin-bottom: 125px;
+  font-size: 30px;
+  margin-left: 165px;
+  margin-bottom: 6px;
+ }
+ .game-status {
+   font-size: 20px;
+   margin-left: 180px;
+   margin-bottom:50px;
  }
 
 .game-board {

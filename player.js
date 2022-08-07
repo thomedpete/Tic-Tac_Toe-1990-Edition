@@ -5,10 +5,8 @@ class Player {
    this.token = token
    this.isCurrentPlayer = true
 }
-placeToken(){
- for(var i = 0; i < gameBoard.length; i++) {
+placeToken() {
 
- }
 }
 changeTurns() {
 
