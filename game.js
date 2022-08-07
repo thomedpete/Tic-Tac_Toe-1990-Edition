@@ -5,6 +5,7 @@ var player1 = new Player('one','O',true)
 var player2 = new Player('two','X',false)
 var currentPlayer = player1.token
 
+
 var winCons  = [
   [0,1,2],
   [3,4,5],
@@ -36,6 +37,8 @@ for(var i = 0; i < winCons.length; i++) {
    console.log(`${currentPlayer} Wins!`)
 } else if(!gameBoard.includes('')) {
   console.log('DRAW')
+} else {
+  switchCurrentPlayer()
 }
 
 }
@@ -59,17 +62,17 @@ function selectBox(box,index) {
 
 }
 
-selectBox('b3',3)
-switchCurrentPlayer()
-selectBox('b0',0)
- switchCurrentPlayer()
- selectBox('b4', 4)
-switchCurrentPlayer()
-selectBox('b1',1)
-switchCurrentPlayer()
- selectBox('b8',8)
- switchCurrentPlayer()
-  selectBox('b2',2)
+// selectBox('b3',3)
+// switchCurrentPlayer()
+// selectBox('b0',0)
+//  switchCurrentPlayer()
+//  selectBox('b4', 4)
+// switchCurrentPlayer()
+// selectBox('b1',1)
+// switchCurrentPlayer()
+//  selectBox('b8',8)
+//  switchCurrentPlayer()
+//   selectBox('b2',2)
 // switchCurrentPlayer()
 //   selectBox('b6',6)
 // switchCurrentPlayer()
