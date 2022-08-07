@@ -3,7 +3,7 @@
 var gameBoard = ['','','','','','','','','']
 var player1 = new Player('one','O',true)
 var player2 = new Player('two','X',false)
-var currentPlayer = player1.token
+var currentPlayer = player1
 
 
 var winCons  = [
@@ -34,7 +34,7 @@ for(var i = 0; i < winCons.length; i++) {
    }
  }
  if(winnerFound == true) {
-   console.log(`${currentPlayer} Wins!`)
+   console.log(`${currentPlayer.id} Wins!`)
 } else if(!gameBoard.includes('')) {
   console.log('DRAW')
 } else {
@@ -43,21 +43,24 @@ for(var i = 0; i < winCons.length; i++) {
 
 }
 
+function resetGame() {
+gameBoard = ['','','','','','','','','']
+}
 
 function switchCurrentPlayer() {
-  if(currentPlayer === player1.token) {
-    currentPlayer = player2.token
+  if(currentPlayer === player1) {
+    currentPlayer = player2
     player1.isCurrentPlayer = false
     player2.isCurrentPlayer = true
   } else {
-    currentPlayer = player1.token
+    currentPlayer = player1
     player1.isCurrentPlayer = true
     player2.isCurrentPlayer = false
   }
 }
 
 function selectBox(box,index) {
-  gameBoard[index] = currentPlayer
+  gameBoard[index] = currentPlayer.token
   checkForWin()
 
 }

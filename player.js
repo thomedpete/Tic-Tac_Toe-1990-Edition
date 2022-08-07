@@ -11,4 +11,7 @@ placeToken() {
 changeTurns() {
 
 }
+increaseWinCount() {
+
+}
 }
