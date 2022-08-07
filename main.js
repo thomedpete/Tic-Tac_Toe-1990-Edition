@@ -1,18 +1,30 @@
-var gameBox0 = document.querySelector('#b0')
-var gameBox1 = document.querySelector('#b1')
-var gameBox2 = document.querySelector('#b2')
-var gameBox3 = document.querySelector('#b3')
-var gameBox4 = document.querySelector('#b4')
-var gameBox5 = document.querySelector('#b5')
-var gameBox6 = document.querySelector('#b6')
-var gameBox7 = document.querySelector('#b7')
-var gameBox8 = document.querySelector('#b8')
+// var gameBoxes = document.querySelectorAll('.game-box')
+//       for(var i = 0; i < gameBoxes.length; i++) {
+//         addEventListener('click',addTokenToDom)
+//       }
+var b0 = document.querySelector('#b0')
+var b1 = document.querySelector('#b1')
+var b2 = document.querySelector('#b2')
+var b3 = document.querySelector('#b3')
+var b4 = document.querySelector('#b4')
+var b5 = document.querySelector('#b5')
+var b6 = document.querySelector('#b6')
+var b7 = document.querySelector('#b7')
+var b8 = document.querySelector('#b8')
 
 
 
+var gameStatus = document.querySelector('.game-status')
+var player1Score = document.querySelector('.player-1-score')
+var player2Score = document.querySelector('.player-2-score')
 
 
 
+function addTokenToDom() {
+  .innerText = currentPlayer.id
+  switchCurrentPlayer()
+
+}
 
 
 

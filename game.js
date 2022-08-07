@@ -1,8 +1,8 @@
 //Game Data
 
 var gameBoard = ['','','','','','','','','']
-var player1 = new Player('one','O',true)
-var player2 = new Player('two','X',false)
+var player1 = new Player('Rangers','O',true)
+var player2 = new Player('The Turtles','X',false)
 var currentPlayer = player1
 
 
@@ -17,6 +17,23 @@ var winCons  = [
   [2,4,6]
 ]
 
+function selectBox(box,index) {
+  gameBoard[index] = currentPlayer.token
+  checkForWin()
+
+}
+
+function switchCurrentPlayer() {
+  if(currentPlayer === player1) {
+    currentPlayer = player2
+    player1.isCurrentPlayer = false
+    player2.isCurrentPlayer = true
+  } else {
+    currentPlayer = player1
+    player1.isCurrentPlayer = true
+    player2.isCurrentPlayer = false
+  }
+}
 
 function checkForWin() {
   var winnerFound = false
@@ -34,8 +51,11 @@ for(var i = 0; i < winCons.length; i++) {
    }
  }
  if(winnerFound == true) {
+   currentPlayer.increaseWinCount()
    console.log(`${currentPlayer.id} Wins!`)
+   resetGame()
 } else if(!gameBoard.includes('')) {
+  resetGame()
   console.log('DRAW')
 } else {
   switchCurrentPlayer()
@@ -45,25 +65,10 @@ for(var i = 0; i < winCons.length; i++) {
 
 function resetGame() {
 gameBoard = ['','','','','','','','','']
+currentPlayer = player1
 }
 
-function switchCurrentPlayer() {
-  if(currentPlayer === player1) {
-    currentPlayer = player2
-    player1.isCurrentPlayer = false
-    player2.isCurrentPlayer = true
-  } else {
-    currentPlayer = player1
-    player1.isCurrentPlayer = true
-    player2.isCurrentPlayer = false
-  }
-}
 
-function selectBox(box,index) {
-  gameBoard[index] = currentPlayer.token
-  checkForWin()
-
-}
 
 // selectBox('b3',3)
 // switchCurrentPlayer()
