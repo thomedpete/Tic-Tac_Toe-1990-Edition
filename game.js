@@ -34,7 +34,10 @@ for(var i = 0; i < winCons.length; i++) {
  }
  if(winnerFound == true) {
    console.log(`${currentPlayer} Wins!`)
+} else if(!gameBoard.includes('')) {
+  console.log('DRAW')
 }
+
 }
 
 
@@ -53,16 +56,23 @@ function switchCurrentPlayer() {
 function selectBox(box,index) {
   gameBoard[index] = currentPlayer
   checkForWin()
-  console.log(gameBoard)
 
 }
 
- selectBox('b0',0)
+selectBox('b3',3)
 switchCurrentPlayer()
- selectBox('b3',3)
+selectBox('b0',0)
  switchCurrentPlayer()
- selectBox('b1',1)
-switchCurrentPlayer()
  selectBox('b4', 4)
 switchCurrentPlayer()
- selectBox('b2',2)
+selectBox('b1',1)
+switchCurrentPlayer()
+ selectBox('b8',8)
+ switchCurrentPlayer()
+  selectBox('b2',2)
+// switchCurrentPlayer()
+//   selectBox('b6',6)
+// switchCurrentPlayer()
+//   selectBox('b7',7)
+// switchCurrentPlayer()
+//   selectBox('b8',8)
