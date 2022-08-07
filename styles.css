@@ -1,6 +1,6 @@
 body{
-background-image: url(https://image.shutterstock.com/image-photo/quasar-deep-space-elements-this-260nw-1758938918.jpg);
-background-size:cover;
+/* background-image: url(https://image.shutterstock.com/image-photo/quasar-deep-space-elements-this-260nw-1758938918.jpg);
+background-size:cover; */
 display: flex;
 margin:0px;
 padding:0px;
@@ -19,12 +19,24 @@ height: 900px;
 width:400px;
 }
 
+.middle-column {
+  display: flex;
+  flex-direction: column;
+  align-content: : center;
+
+  background-color: grey;
+}
+ h1 {
+  margin-left: 179px;
+  margin-bottom: 125px;
+ }
+
 .game-board {
   display:flex;
+  background-color: red;
   flex-wrap:wrap;
   background-color:;
   align-items: center;
-  margin-top: 150px;
   justify-content: center;
   height:450px;
   width: 550px;
