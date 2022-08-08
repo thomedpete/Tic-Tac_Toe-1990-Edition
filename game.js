@@ -19,6 +19,7 @@ var winCons  = [
 
 function selectBox(box,index) {
   gameBoard[index] = currentPlayer.token
+  .innerText = currentPlayer.id
   checkForWin()
 
 }
@@ -26,6 +27,7 @@ function selectBox(box,index) {
 function switchCurrentPlayer() {
   if(currentPlayer === player1) {
     currentPlayer = player2
+    
     player1.isCurrentPlayer = false
     player2.isCurrentPlayer = true
   } else {
