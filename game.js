@@ -1,7 +1,7 @@
 class Game {
   constructor(player1,player2)  {
     this.gameBoard = ['','','','','','','','','']
-    this.wincons = [
+    this.winCons = [
      [0,1,2],
      [3,4,5],
      [6,7,8],
@@ -13,21 +13,17 @@ class Game {
    ]
     this.player1 = player1.token
     this.player2 = player2.token
-    this.currentPlayer = player1
+    this.currentPlayer = player1.token
   }
 
   initGame() {
-  
     this.currentPlayer = player1
     var player2 = new Player('X','The Turtles',false)
     this.gameBoard = ['','','','','','','','','']
   }
-  selectBox(index) {
-    this.gameBoard[index] = currentPlayer.token
-    this.checkForWin()
-  }
+
   switchCurrentPlayer() {
-    if(this.currentPlayer == player1) {
+    if(this.currentPlayer === player1) {
       this.currentPlayer = player2
       player1.isCurrentPlayer = false
       player2.isCurrentPlayer = true
@@ -39,8 +35,16 @@ class Game {
       console.log(this.currentPlayer.token)
     }
   }
+
+  selectBox(index) {
+    this.gameBoard[index] = this.currentPlayer.token
+      this.checkForWin()
+  }
+
+
   checkForWin() {
     var winnerFound = false
+
   for(var i = 0; i < this.winCons.length; i++) {
       var winStatus = this.winCons[i]
       var boxZero = this.gameBoard[winStatus[0]]
@@ -55,14 +59,14 @@ class Game {
      }
    }
    if(winnerFound == true) {
-     this.currentPlayer.increaseWinCount()
+     this.currentPlayer.increaseWinCount(nuGame)
      console.log(`${this.currentPlayer.token} Wins!`)
 
   } else if(!this.gameBoard.includes('')) {
 
     console.log('DRAW')
   } else {
-    switchCurrentPlayer()
+    this.switchCurrentPlayer()
   }
 
   }

@@ -6,10 +6,17 @@
 
 
 function playGameSim() {
-  
+  nuGame.initGame()
+  nuGame.selectBox(0)
+  nuGame.selectBox(4)
+  nuGame.selectBox(1)
+  nuGame.selectBox(5)
+  nuGame.selectBox(2)
+
+  console.log(nuGame.gameBoard)
 }
 
-
+playGameSim()
 
 
 
