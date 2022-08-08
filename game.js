@@ -1,9 +1,37 @@
 //Game Data
+class Game {
+  constructor()  {
+    this.gameBoard = ['','','','','','','','','']
+    this.player1 = player1
+    this.player2 = player2
+    this.currentPlayer = player1
+  }
+
+  initGame() {
+    var player1 = new Player('O','Rangers',true)
+    var player2 = new Player('X','The Turtles',false)
+    this.gameBoard = ['','','','','','','','','']
+  }
+
+   
+
+}
+
+
+
+
+
+
+
+
+
+
 
 var gameBoard = ['','','','','','','','','']
-var player1 = new Player('Rangers','O',true)
-var player2 = new Player('The Turtles','X',false)
+var player1 = new Player('O','Rangers',true)
+var player2 = new Player('X','The Turtles',false)
 var currentPlayer = player1
+
 
 
 var winCons  = [
@@ -17,23 +45,22 @@ var winCons  = [
   [2,4,6]
 ]
 
-function selectBox(box,index) {
-  gameBoard[index] = currentPlayer.token
-  .innerText = currentPlayer.id
+function selectBox(box,index,) {
+  gameBoard[index] = currentPlayer.id
   checkForWin()
-
 }
 
 function switchCurrentPlayer() {
-  if(currentPlayer === player1) {
+  if(currentPlayer == player1) {
     currentPlayer = player2
-    
     player1.isCurrentPlayer = false
     player2.isCurrentPlayer = true
+    console.log(currentPlayer.token)
   } else {
     currentPlayer = player1
     player1.isCurrentPlayer = true
     player2.isCurrentPlayer = false
+    console.log(currentPlayer.token)
   }
 }
 
@@ -54,10 +81,10 @@ for(var i = 0; i < winCons.length; i++) {
  }
  if(winnerFound == true) {
    currentPlayer.increaseWinCount()
-   console.log(`${currentPlayer.id} Wins!`)
-   resetGame()
+   console.log(`${currentPlayer.token} Wins!`)
+
 } else if(!gameBoard.includes('')) {
-  resetGame()
+
   console.log('DRAW')
 } else {
   switchCurrentPlayer()
@@ -65,24 +92,25 @@ for(var i = 0; i < winCons.length; i++) {
 
 }
 
-function resetGame() {
+function initGame() {
 gameBoard = ['','','','','','','','','']
 currentPlayer = player1
+
 }
 
 
 
 // selectBox('b3',3)
 // switchCurrentPlayer()
-// selectBox('b0',0)
-//  switchCurrentPlayer()
+selectBox('b0',0)
+switchCurrentPlayer()
 //  selectBox('b4', 4)
 // switchCurrentPlayer()
-// selectBox('b1',1)
-// switchCurrentPlayer()
+selectBox('b1',1)
+switchCurrentPlayer()
 //  selectBox('b8',8)
 //  switchCurrentPlayer()
-//   selectBox('b2',2)
+  selectBox('b2',2)
 // switchCurrentPlayer()
 //   selectBox('b6',6)
 // switchCurrentPlayer()

@@ -11,17 +11,19 @@
 // var b6 = document.querySelector('#b6')
 // var b7 = document.querySelector('#b7')
 // var b8 = document.querySelector('#b8')
-var allBoxes = document.querySelectorAll('.game-box')
-var gameBoard = document.querySelector('.game-board')
-var gameStatus = document.querySelector('.game-status')
-var player1Score = document.querySelector('.player-1-score')
-var player2Score = document.querySelector('.player-2-score')
-    gameBoard.addEventListener('click', addTokenToDom)
-
-function addTokenToDom(event) {
-var boxSelected = event.target
-event.target.innerText = currentPlayer.id
-}
+// var allBoxes = document.querySelectorAll('.game-box')
+// var gameBoard = document.querySelector('.game-board')
+// gameBoard.addEventListener('click',chooseBox)
+// var gameStatus = document.querySelector('.game-status')
+// var player1Score = document.querySelector('.player-1-score')
+// var player2Score = document.querySelector('.player-2-score')
+//
+// function chooseBox() {
+// var boxSelected = event.target.id
+// if (event.target.ClassName === '.game-box') {
+//       boxSelected.innerText = currentPlayer
+// }
+// }
 
 // b0.addEventListener('click',addTokenToDom)
 // b1.addEventListener('click',addTokenToDom)
