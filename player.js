@@ -5,10 +5,9 @@ class Player {
    this.token = token
    this.isCurrentPlayer = true
 }
-placeToken() {
 
-}
-changeTurns() {
 
+increaseWinCount() {
+ currentPlayer.wins++
 }
 }

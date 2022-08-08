@@ -1,9 +1,38 @@
 //Game Data
+class Game {
+  constructor()  {
+    this.gameBoard = ['','','','','','','','','']
+    this.player1 = player1
+    this.player2 = player2
+    this.currentPlayer = player1
+  }
+
+  initGame() {
+    var player1 = new Player('O','Rangers',true)
+    var player2 = new Player('X','The Turtles',false)
+    this.gameBoard = ['','','','','','','','','']
+  }
+
+   
+
+}
+
+
+
+
+
+
+
+
+
+
 
 var gameBoard = ['','','','','','','','','']
-var player1 = new Player('one','O',true)
-var player2 = new Player('two','X',false)
-var currentPlayer = player1.token
+var player1 = new Player('O','Rangers',true)
+var player2 = new Player('X','The Turtles',false)
+var currentPlayer = player1
+
+
 
 var winCons  = [
   [0,1,2],
@@ -16,6 +45,24 @@ var winCons  = [
   [2,4,6]
 ]
 
+function selectBox(box,index,) {
+  gameBoard[index] = currentPlayer.id
+  checkForWin()
+}
+
+function switchCurrentPlayer() {
+  if(currentPlayer == player1) {
+    currentPlayer = player2
+    player1.isCurrentPlayer = false
+    player2.isCurrentPlayer = true
+    console.log(currentPlayer.token)
+  } else {
+    currentPlayer = player1
+    player1.isCurrentPlayer = true
+    player2.isCurrentPlayer = false
+    console.log(currentPlayer.token)
+  }
+}
 
 function checkForWin() {
   var winnerFound = false
@@ -33,36 +80,40 @@ for(var i = 0; i < winCons.length; i++) {
    }
  }
  if(winnerFound == true) {
-   console.log(`${currentPlayer} Wins!`)
-}
-}
+   currentPlayer.increaseWinCount()
+   console.log(`${currentPlayer.token} Wins!`)
 
+} else if(!gameBoard.includes('')) {
 
-function switchCurrentPlayer() {
-  if(currentPlayer === player1.token) {
-    currentPlayer = player2.token
-    player1.isCurrentPlayer = false
-    player2.isCurrentPlayer = true
-  } else {
-    currentPlayer = player1.token
-    player1.isCurrentPlayer = true
-    player2.isCurrentPlayer = false
-  }
+  console.log('DRAW')
+} else {
+  switchCurrentPlayer()
 }
-
-function selectBox(box,index) {
-  gameBoard[index] = currentPlayer
-  checkForWin()
-  console.log(gameBoard)
 
 }
 
- selectBox('b0',0)
+function initGame() {
+gameBoard = ['','','','','','','','','']
+currentPlayer = player1
+
+}
+
+
+
+// selectBox('b3',3)
+// switchCurrentPlayer()
+selectBox('b0',0)
 switchCurrentPlayer()
- selectBox('b3',3)
- switchCurrentPlayer()
- selectBox('b1',1)
+//  selectBox('b4', 4)
+// switchCurrentPlayer()
+selectBox('b1',1)
 switchCurrentPlayer()
- selectBox('b4', 4)
-switchCurrentPlayer()
- selectBox('b2',2)
+//  selectBox('b8',8)
+//  switchCurrentPlayer()
+  selectBox('b2',2)
+// switchCurrentPlayer()
+//   selectBox('b6',6)
+// switchCurrentPlayer()
+//   selectBox('b7',7)
+// switchCurrentPlayer()
+//   selectBox('b8',8)
