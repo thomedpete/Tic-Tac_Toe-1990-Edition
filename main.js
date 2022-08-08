@@ -1,3 +1,23 @@
+
+  var player1 = new Player('O','Rangers',true)
+  var player2 = new Player('X','The Turtles',false)
+  var nuGame = new Game(player1,player2)
+
+
+
+function playGameSim() {
+  
+}
+
+
+
+
+
+
+
+
+
+
 // var gameBoxes = document.querySelectorAll('.game-box')
 //       for(var i = 0; i < gameBoxes.length; i++) {
 //         addEventListener('click',addTokenToDom)
