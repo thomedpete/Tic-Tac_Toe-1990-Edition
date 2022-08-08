@@ -1,9 +1,9 @@
 //Game Data
 class Game {
-  constructor()  {
+  constructor(player1,player2)  {
     this.gameBoard = ['','','','','','','','','']
-    this.player1 = player1
-    this.player2 = player2
+    this.player1 = player1.token
+    this.player2 = player2.token
     this.currentPlayer = player1
   }
 
@@ -13,7 +13,7 @@ class Game {
     this.gameBoard = ['','','','','','','','','']
   }
 
-   
+
 
 }
 
