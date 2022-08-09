@@ -19,6 +19,17 @@ height: 900px;
 width:400px;
 }
 
+#player1Logo {
+  height: 250px;
+  width: 250px;
+  margin-left: -19px;
+}
+.player-1-score{
+  font-size: 50px;
+  margin-top: 70px;
+  margin-left: -38px;
+}
+
 .middle-column {
   display: flex;
   flex-direction: column;
@@ -32,14 +43,13 @@ width:400px;
   margin-bottom: 6px;
  }
  .turn-status {
-   font-size: 20px;
-   margin-left: 180px;
+   font-size: 30px;
+   margin-left: 150px;
    margin-bottom:50px;
  }
 
 .game-board {
   display:flex;
-  background-color: red;
   flex-wrap:wrap;
   background-color:;
   align-items: center;
@@ -49,11 +59,14 @@ width:400px;
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   margin:0px;
   padding:0;
   width: 150px;
   height: 150px;
-
 }
 .b0 {
   border-right: 3px solid black;
@@ -91,7 +104,15 @@ border-right: 3px solid black;
 border-right: 3px solid black;
 }
 
+.player-1-token {
+  height:50px;
+  width:50px;
+}
 
+.player-2-token{
+  height:50px;
+  width:55px;
+}
 
 .right-column{
   display:flex;
@@ -102,12 +123,13 @@ border-right: 3px solid black;
   height: 900px;
   width:400px;
 }
-
-.player-1-token {
-  height:50px;
-  width:50px;
+#player2Logo {
+  height: 250px;
+  width: 250px;
+  margin-left: 12px;
 }
-.player-2-token{
-  height:50px;
-  width:55px;
+.player-2-score{
+  font-size: 50px;
+  margin-top: 70px;
+  margin-left: -35px;
 }

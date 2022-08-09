@@ -12,15 +12,10 @@ class Game {
      [2,4,6]
    ]
     this.isWinner = null
-    this.player1 = player1.token
-    this.player2 = player2.token
+    this.player1 = player1
+    this.player2 = player2
     this.currentPlayer = player1
   }
-
-
-
-
-
 
   switchCurrentPlayer() {
     if(this.currentPlayer === player1) {
@@ -37,7 +32,6 @@ class Game {
 
   }
 
-
   selectBox(index) {
     this.gameBoard[index] = this.currentPlayer.token
     this.checkForWin()
@@ -45,7 +39,6 @@ class Game {
 
   checkForWin() {
     var winnerFound = false
-
   for(var i = 0; i < this.winCons.length; i++) {
       var winStatus = this.winCons[i]
       var boxZero = this.gameBoard[winStatus[0]]
