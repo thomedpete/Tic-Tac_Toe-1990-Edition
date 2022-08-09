@@ -2,7 +2,7 @@ window.addEventListener('load',domClear)
 var currentPlayerStatus = document.querySelector('.turn-status')
 var gameBoxes = document.querySelectorAll('.box')
 for(var i = 0; i < gameBoxes.length; i++) {
-    addEventListener('click',boxChoice)
+    addEventListener('click',checksLegalMove)
 }
 
 
@@ -23,15 +23,23 @@ var gameIndex = gameBoxes[i]
 gameIndex.innerText = ''
   }
 }
-event.target.matches('.box')
+
+function checksLegalMove(event) {
+  var  id = event.target.id
+  if(nuGame.gameBoard[id] != '') {
+    return
+  }
+  boxChoice(event)
+}
 
 function boxChoice(event) {
   var  id = event.target.id
   if(event.target.matches('.box')) {
     event.target.innerText = nuGame.currentPlayer.token
-    nuGame.selectBox(id)
     switchPlayerDom()
- }
+  }
+  nuGame.selectBox(id)
+
 if(nuGame.isWinner === nuGame.currentPlayer.token || nuGame.isWinner === 'draw') {
    currentPlayerStatus.innerText = nuGame.currentPlayer.token + 'Win!'
    setTimeout(domClear,3000)
