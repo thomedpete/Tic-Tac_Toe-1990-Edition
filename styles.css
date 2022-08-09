@@ -105,13 +105,16 @@ border-right: 3px solid black;
 }
 
 .player-1-token {
-  height:50px;
-  width:50px;
-}
+  margin-left: 5px;
+  height: 120px;
+  width: 137px;
+  }
+
 
 .player-2-token{
-  height:50px;
-  width:55px;
+  height: 123px;
+  width: 138px;
+  margin-left: 6px;
 }
 
 .right-column{
