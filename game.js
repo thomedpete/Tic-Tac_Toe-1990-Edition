@@ -13,13 +13,13 @@ class Game {
    ]
     this.player1 = player1.token
     this.player2 = player2.token
-    this.currentPlayer = player1.token
+    this.currentPlayer = player1
   }
 
   initGame() {
     this.currentPlayer = player1
-    var player2 = new Player('X','The Turtles',false)
     this.gameBoard = ['','','','','','','','','']
+
   }
 
   switchCurrentPlayer() {
@@ -27,20 +27,19 @@ class Game {
       this.currentPlayer = player2
       player1.isCurrentPlayer = false
       player2.isCurrentPlayer = true
-      console.log(this.currentPlayer.token)
+
     } else {
       this.currentPlayer = player1
       player1.isCurrentPlayer = true
       player2.isCurrentPlayer = false
-      console.log(this.currentPlayer.token)
+
     }
   }
 
   selectBox(index) {
     this.gameBoard[index] = this.currentPlayer.token
-      this.checkForWin()
+    this.checkForWin()
   }
-
 
   checkForWin() {
     var winnerFound = false
@@ -60,10 +59,11 @@ class Game {
    }
    if(winnerFound == true) {
      this.currentPlayer.increaseWinCount(nuGame)
-     console.log(`${this.currentPlayer.token} Wins!`)
+     console.log(`${this.currentPlayer.token} Win!`)
+     this.initGame()
 
   } else if(!this.gameBoard.includes('')) {
-
+    this.initGame()
     console.log('DRAW')
   } else {
     this.switchCurrentPlayer()
@@ -71,77 +71,4 @@ class Game {
 
   }
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-// var gameBoard = ['','','','','','','','','']
-// var player1 = new Player('O','Rangers',true)
-// var player2 = new Player('X','The Turtles',false)
-// var currentPlayer = player1
-
-
-
-
-
-
-
-// function checkForWin() {
-//   var winnerFound = false
-// for(var i = 0; i < winCons.length; i++) {
-//     var winStatus = winCons[i]
-//     var boxZero = gameBoard[winStatus[0]]
-//     var boxOne = gameBoard[winStatus[1]]
-//     var boxTwo = gameBoard[winStatus[2]]
-//  if(boxZero == '' || boxOne == '' || boxTwo == '') {
-//     continue
-//   }
-//   if(boxZero == boxOne && boxOne == boxTwo) {
-//     winnerFound = true
-//     break
-//    }
-//  }
-//  if(winnerFound == true) {
-//    currentPlayer.increaseWinCount()
-//    console.log(`${currentPlayer.token} Wins!`)
-//
-// } else if(!gameBoard.includes('')) {
-//
-//   console.log('DRAW')
-// } else {
-//   switchCurrentPlayer()
-// }
-//
-// }
-
-
-
-
-
-// selectBox('b3',3)
-// switchCurrentPlayer()
-// selectBox('b0',0)
-// switchCurrentPlayer()
-//  selectBox('b4', 4)
-// switchCurrentPlayer()
-// selectBox('b1',1)
-// switchCurrentPlayer()
-//  selectBox('b8',8)
-//  switchCurrentPlayer()
-  // selectBox('b2',2)
-// switchCurrentPlayer()
-//   selectBox('b6',6)
-// switchCurrentPlayer()
-//   selectBox('b7',7)
-// switchCurrentPlayer()
-//   selectBox('b8',8)
