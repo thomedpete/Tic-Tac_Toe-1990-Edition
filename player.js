@@ -7,7 +7,7 @@ class Player {
 }
 
 
-increaseWinCount() {
- currentPlayer.wins++
+increaseWinCount(nuGame) {
+ nuGame.currentPlayer.wins++
 }
 }
