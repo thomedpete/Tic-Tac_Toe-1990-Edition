@@ -6,12 +6,14 @@ for(var i = 0; i < gameBoxes.length; i++) {
 }
 
 
-var player1 = new Player('Its The Rangers Move!','<img class="player-1-token"  src="assets/coin-vector-mighty-morphin-power-rangers-1096316.png">')
-var player2 = new Player('Its The Turtles Move!','<img class="player-2-token" src="assets/turtles.png">')
+var player1 = new Player('The Power Rangers','Its The Rangers Move!','<img class="player-2-token" src="assets/player1 token.gif">')
+var player2 = new Player('The Ninja Turtles','Its The Turtles Move!','<img class="player-2-token" src="assets/turtleToken.gif">')
 var nuGame =  new Game(player1,player2)
 
 function switchPlayerDom() {
-currentPlayerStatus.innerText = nuGame.currentPlayer.id
+if(nuGame.isWinner === null) {
+  currentPlayerStatus.innerText = nuGame.currentPlayer.id
+ }
 }
 
 function domClear() {
@@ -23,6 +25,7 @@ var gameIndex = gameBoxes[i]
 gameIndex.innerText = ''
   }
 }
+
 
 function checksLegalMove(event) {
   var  id = event.target.id
@@ -37,12 +40,9 @@ function boxChoice(event) {
   if(event.target.matches('.box')) {
     event.target.innerHTML += nuGame.currentPlayer.token
   }
-  switchPlayerDom()
   nuGame.selectBox(id)
-
-
-if(nuGame.isWinner === nuGame.currentPlayer.token) {
-   currentPlayerStatus.innerText = nuGame.currentPlayer.id
+if(nuGame.isWinner === nuGame.currentPlayer.name) {
+   currentPlayerStatus.innerText = nuGame.currentPlayer.name + ' Win!'
    setTimeout(domClear,3000)
    nuGame.gameBoard = ['','','','','','','','','']
  } else if(nuGame.isWinner === 'draw') {
@@ -50,5 +50,6 @@ if(nuGame.isWinner === nuGame.currentPlayer.token) {
    setTimeout(domClear,3000)
    nuGame.gameBoard = ['','','','','','','','','']
  }
-  nuGame.switchCurrentPlayer()
+ nuGame.switchCurrentPlayer()
+ switchPlayerDom()
 }

@@ -54,8 +54,8 @@ class Game {
    }
    if(winnerFound == true) {
      this.currentPlayer.increaseWinCount(nuGame)
-     this.isWinner = this.currentPlayer.token
-     console.log(`${this.currentPlayer.token} Win!`)
+     this.isWinner = this.currentPlayer.name
+     console.log(`${this.currentPlayer.name} Win!`)
 
 
   } else if(!this.gameBoard.includes('')) {
