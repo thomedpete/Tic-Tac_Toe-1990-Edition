@@ -11,15 +11,10 @@ class Game {
      [0,4,8],
      [2,4,6]
    ]
-    this.player1 = player1.token
-    this.player2 = player2.token
+    this.isWinner = null
+    this.player1 = player1
+    this.player2 = player2
     this.currentPlayer = player1
-  }
-
-  initGame() {
-    this.currentPlayer = player1
-    this.gameBoard = ['','','','','','','','','']
-
   }
 
   switchCurrentPlayer() {
@@ -34,6 +29,7 @@ class Game {
       player2.isCurrentPlayer = false
 
     }
+
   }
 
   selectBox(index) {
@@ -43,7 +39,6 @@ class Game {
 
   checkForWin() {
     var winnerFound = false
-
   for(var i = 0; i < this.winCons.length; i++) {
       var winStatus = this.winCons[i]
       var boxZero = this.gameBoard[winStatus[0]]
@@ -59,14 +54,13 @@ class Game {
    }
    if(winnerFound == true) {
      this.currentPlayer.increaseWinCount(nuGame)
-     console.log(`${this.currentPlayer.token} Win!`)
-     this.initGame()
+     this.isWinner = this.currentPlayer.name
+     console.log(`${this.currentPlayer.name} Win!`)
+
 
   } else if(!this.gameBoard.includes('')) {
-    this.initGame()
+     this.isWinner = 'draw'
     console.log('DRAW')
-  } else {
-    this.switchCurrentPlayer()
   }
 
   }
